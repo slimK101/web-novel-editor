@@ -8,7 +8,7 @@ const overlay = document.getElementById("overlay");
 
 
 
-createNewNovelButton.addEventListener("click", ()=>{
+/*createNewNovelButton.addEventListener("click", ()=>{
     novelCreationPrompt.style.display = "block";
     overlay.style.display = "block";
     if(title){
@@ -29,8 +29,7 @@ confirmButton.addEventListener("click", () => {
     if (title) {
       
         const newNovel = new Novel(title); 
-        saveNovel(newNovel); 
-        //alert(`Novel "${title}" created!`);
+    saveNovel(newNovel); 
         message.textContent = "Sucessfully Created!";
        
         novelCreationPrompt.addChild(message);
@@ -55,10 +54,7 @@ overlay.addEventListener("click", closePrompt);
 
 
 //----------------------------------------------------
-document.getElementById("showNovels").addEventListener("click", ()=>{
-   
-    updateNovelList();
-});
+
 
 
 
@@ -97,21 +93,56 @@ function openNovel(index){
     const novels = getNovels();
     const novel = novels[index];
 
-    // Redirect to the editor page or load content dynamically
+   
     localStorage.setItem("currentNovel", JSON.stringify(novel));
-    window.location.href = "editor.html"; // Example for redirection
+    window.location.href = "editor.html";
     
 }
 
 
 
+*/
 
-//----------------------------------------------------
 class Novel{
     constructor(title){
         this.title = title;
+        this.coverSource = "Assets/Covers/cover2.jpg";
     }
 
 
 
 }
+
+function createNovelButton(novel,location){
+    
+    let th = document.createElement("th");
+    let novelDiv = document.createElement("div");
+    let coverImage = document.createElement("img");
+    let mainDiv = document.getElementById(location).getElementsByTagName("table")[0].getElementsByTagName("tbody")[0];
+
+    
+   
+    coverImage.classList.add('novelButtonCover');
+    novelDiv.classList.add('novelButton');
+    coverImage.src = novel.coverSource;
+    novelDiv.appendChild(coverImage);
+  
+    let row = mainDiv.getElementsByTagName("tr")[0];
+    row.appendChild(th);
+    th.appendChild(novelDiv);
+
+    
+
+}
+
+createNovelButton(new Novel("Slimen"),"recentProjects");
+createNovelButton(new Novel("Slimen"),"allProjects");
+createNovelButton(new Novel("Slimen"),"allProjects");
+createNovelButton(new Novel("Slimen"),"allProjects");
+
+
+
+
+
+
+

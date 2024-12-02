@@ -4,26 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="homePage.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>NovelEditor</title>
 </head>
 <body>
-    <p1>NovelEditor</p1><br>
-    <button id = "createNewNovel">Create New Novel</button>
-    <button id = "showNovels">Show Novels</button>
-    <div id="novelList"></div>
-    <div id="novelCreationPrompt">
-        <p1>Title:</p1> <br>
-        <input id = 'titleInput'>
-        <button id ="cancelNovelCreation">Cancel</button>
-        <button id ="confirmNovelCreation">Confirm</button><br>
+    <div id="navbar"></div>
+<div class ="side-content">
+    <div id="top">
+        <h1 class="center-text">Welcome</h1>
+    </div>
+    <div id="recentProjects">
+        <h2 class="head-title">Recent Projects</h2>
+        <table id ="novelButton-table">
+            <tbody id ="tableBody">
+            <tr id ="active-row">
+            <th>
+                <div class ="novelButton">
+                    <img src="Assets/Covers/cover101.webp" class = "novelButtonCover">
+                </div>
+            </th>
 
-        
-        
+            <th>
+                <div class ="novelButton">
+                    <img src="Assets/Covers/cover101.webp" class = "novelButtonCover">
+                </div>
+            </th>
+
+            <th>
+                <div class ="novelButton">
+                    <img src="Assets/Covers/default.jpg" class = "novelButtonCover">
+                </div>
+            </th>
+            </tr>
+
+        </tbody>
+        </table>
+    </div>
+    <div id ="allProjects">
+        <h2 class="head-title">All Projects</h2>
+        <table id ="novelButton-table">
+            <tbody id ="tableBody">
+            <tr id ="active-row">
+            </tr>
+
+        </tbody>
+        </table>
+
 
 
 
 
     </div>
+    
+
+</div>
     <script src="homeScript.js"></script>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
+    </script>
 </body>
 </html>

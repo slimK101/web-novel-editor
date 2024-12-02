@@ -1,3 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Ensure full height coverage */
+}
+
+
+/*text classes*/
+.center-text {
+    text-align: center;
+}
+
+.head-title{
+    font: 'Source';
+}
+
+.side-content{
+    margin-left:5%;
+    margin-top : 50px;
+}   
+
+
+
+.novelButton{
+    /*background-color: #ccc;*/
+}
+
+.novel-addButton{
+   
+}
+
+.novelButtonCover{
+    max-width: 100px; 
+    height: auto;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/*Navbar*/
+.navUl {
+    position: fixed; /* Sticks to the side */
+    top: 0;         /* Start at the top */
+    left: 0;        /* Start at the left edge */
+    height: 100%;   /* Full height */
+    width: 50px;   /* Set the width */
+    background-color: #0A0A0A; /* Background color */
+    color: white;   /* Text color */
+     display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    padding: 20px 10px;
+            
+            
+  }
+
+  .nav-item{
+    align-items:center ;
+    padding-bottom: 10px;
+  }
+
 #novelCreationPrompt {
     display: none; 
     position: fixed;
