@@ -27,15 +27,15 @@ confirmButton.addEventListener("click", () => {
     const title = titleInput.value.trim();
     const message = document.createElement("p1");
     if (title) {
-        // Create the novel
+      
         const newNovel = new Novel(title); 
         saveNovel(newNovel); 
         //alert(`Novel "${title}" created!`);
         message.textContent = "Sucessfully Created!";
-        // Hide the prompt
+       
         novelCreationPrompt.addChild(message);
         closePrompt();
-        updateNovelList(); // Update the list of novels on the homepage
+        updateNovelList(); 
     } else {
         alert("Please enter a title!");
     }
@@ -44,7 +44,7 @@ confirmButton.addEventListener("click", () => {
 function closePrompt() {
     novelCreationPrompt.style.display = "none";
     overlay.style.display = "none";
-    titleInput.value = ""; // Clear the input field
+    titleInput.value = ""; 
 }
 
 cancelButton.addEventListener("click", closePrompt);

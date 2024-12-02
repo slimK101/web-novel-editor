@@ -1,5 +1,5 @@
 #novelCreationPrompt {
-    display: none; /* Hide by default */
+    display: none; 
     position: fixed;
     top: 20%;
     left: 50%;
@@ -8,11 +8,11 @@
     border: 2px solid #ccc;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Ensure it’s above other content */
+    z-index: 1000; 
 }
 
 #overlay {
-    display: none; /* Overlay background */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
