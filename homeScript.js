@@ -115,30 +115,45 @@ class Novel{
 
 function createNovelButton(novel,location){
     
-    let th = document.createElement("th");
+   
     let novelDiv = document.createElement("div");
     let coverImage = document.createElement("img");
-    let mainDiv = document.getElementById(location).getElementsByTagName("table")[0].getElementsByTagName("tbody")[0];
+    let mainDiv = document.getElementById(location).getElementsByTagName("div")[0];
 
     
    
     coverImage.classList.add('novelButtonCover');
     novelDiv.classList.add('novelButton');
     coverImage.src = novel.coverSource;
+    coverImage.draggable = false;
     novelDiv.appendChild(coverImage);
+
+    let addButton = mainDiv.getElementsByClassName("novel-addButton")[0];
+    mainDiv.insertBefore(novelDiv,addButton);
+    
   
-    let row = mainDiv.getElementsByTagName("tr")[0];
-    row.appendChild(th);
-    th.appendChild(novelDiv);
+  
+    
+   
 
     
 
 }
 
+
+function promptNovelCreation(){
+    
+    let prompt = document.getElementById("novelCreation-prompt");
+    prompt.style.display = "block";
+    
+}
+
+createNovelButton(new Novel("Slimen"),"recentProjects");
 createNovelButton(new Novel("Slimen"),"recentProjects");
 createNovelButton(new Novel("Slimen"),"allProjects");
 createNovelButton(new Novel("Slimen"),"allProjects");
-createNovelButton(new Novel("Slimen"),"allProjects");
+
+
 
 
 

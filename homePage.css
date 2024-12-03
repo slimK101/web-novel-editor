@@ -5,9 +5,26 @@
 }
 
 html, body {
-    height: 100%; /* Ensure full height coverage */
+    height: 100%; 
 }
 
+h2{
+    font-family: "Source Serif 4", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.page{
+    display :flex;
+    gap : 2em;
+    height: 100vh;
+}
+.pageElements{
+    flex: 1;
+    padding :30px;
+    margin-left : 50px;
+}
 
 /*text classes*/
 .center-text {
@@ -19,69 +36,135 @@ html, body {
 }
 
 .side-content{
-    margin-left:5%;
+    margin-left:30%;
     margin-top : 50px;
 }   
 
-
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap : wrap;
+    gap :1em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 .novelButton{
-    /*background-color: #ccc;*/
+    cursor: pointer ;
+  
 }
 
 .novel-addButton{
-   
+    background-color: #ccc;
+    width: 90px; 
+    height: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer ;
 }
 
-.novelButtonCover{
-    max-width: 100px; 
-    height: auto;
-    padding: 10px;
-    border-radius: 20px;
+.novel-addButton-icon{
+    width : 30px;
+    height : auto;
+    
 }
+.novelButtonCover{
+    max-width: 90px; 
+    height: auto;
+    
+    border-radius: 10px;
+}
+
+
+.novelCreation-prompt{
+    background: #ccc;
+    display: none   ;
+   height : 100%;
+    width : 500px;
+    height : auto;
+    position : sticky;
+    transition: all 0.5s ease;
+}
+
+
 
 /*Navbar*/
-.navUl {
-    position: fixed; /* Sticks to the side */
-    top: 0;         /* Start at the top */
-    left: 0;        /* Start at the left edge */
-    height: 100%;   /* Full height */
-    width: 50px;   /* Set the width */
-    background-color: #0A0A0A; /* Background color */
-    color: white;   /* Text color */
-     display: flex;
-    flex-direction: column; /* Arrange items vertically */
-    padding: 20px 10px;
-            
+.sidebar {
+    position: fixed; 
+    top: 0;       
+    left: 0;       
+    height: 100vh;  
+    width: 50px;   
+    background-color: #0A0A0A; 
+    color: white;   
+    
             
   }
+  
+  .sidebar ul li {  
+    list-style-type: none;
+    position: relative;
+    height: 50px;
+    padding :  0rem .9rem;
+    margin: 0.8rem auto;
+    line-height: 50px;
+    cursor: pointer;
+  }
+  
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    border-radius: 0.8rem;
+}
+.sidebar i {
+    color : rgb(255, 255, 255);
+}
 
+
+.sidebar ul li a i{
+    text-align: center;
+}
+.sidebar li:hover{
+    background-color: #ccc;
+    transition: all 0.2s ease;
+
+}
   .nav-item{
     align-items:center ;
     padding-bottom: 10px;
   }
 
-#novelCreationPrompt {
-    display: none; 
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
-    background: white;
-    border: 2px solid #ccc;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000; 
+
+
+.bx-plus-medical{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-#overlay {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+
+.novelCreation-prompt .createNew{
+    text-align: center;
+    margin-top: 2rem;
 }
 
+.novelCreation-prompt .headText{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    margin-top: 2rem;
+    margin-left: 5rem;
+}   
+
+.novelCreation-prompt  .summ{
+    height: 100px;
+}
+
+.novelCreation-prompt .txtInput{
+    margin-left: 5rem;
+    border-radius: 5px;
+    width : 200px;
+    height : 30px;
+    margin-top : .5rem;
+}

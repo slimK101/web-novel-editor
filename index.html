@@ -3,71 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <link rel="stylesheet" href="homePage.css">
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,700;1,8..60,700&display=swap" rel="stylesheet">
+
+
+
+
+
     <title>NovelEditor</title>
 </head>
 <body>
-    <div id="navbar"></div>
-<div class ="side-content">
-    <div id="top">
-        <h1 class="center-text">Welcome</h1>
-    </div>
-    <div id="recentProjects">
-        <h2 class="head-title">Recent Projects</h2>
-        <table id ="novelButton-table">
-            <tbody id ="tableBody">
-            <tr id ="active-row">
-            <th>
-                <div class ="novelButton">
-                    <img src="Assets/Covers/cover101.webp" class = "novelButtonCover">
+    <div class ="page">
+
+         <div class="sidebar" >
+            
+                <ul>
+                    <li>
+                   <a><div class="nav-item"><i class='bx bxs-home-alt-2' ></i></div></a> 
+                    </li>
+                    <li>
+                    <a><div class="nav-item"><i class='bx bxs-edit-alt' ></i></div></a> 
+                    </li>
+                    <li>
+                        <a><div class="nav-item"><i class='bx bxs-file-export'></i></div></a> 
+                        </li>
+                </ul>
+            
+            
+         </div>
+         <div class = pageElements>
+            <div id="top">
+            <h1 class="center-text">Welcome</h1>
+            </div>
+
+            <div id="recentProjects">
+            <h2 class="head-title">Recent Projects</h2>
+                <div class ="container">
+                    <div class ="novelButton"><img src="Assets/Covers/cover101.webp" class = "novelButtonCover" draggable="false"></div>
+                    <div class ="novelButton"><img src="Assets/Covers/cover101.webp" class = "novelButtonCover"></div>
+                    <div class ="novel-addButton" onClick="promptNovelCreation()"><i class='bx bx-plus-medical' draggable="false"></i></div>
                 </div>
-            </th>
-
-            <th>
-                <div class ="novelButton">
-                    <img src="Assets/Covers/cover101.webp" class = "novelButtonCover">
-                </div>
-            </th>
-
-            <th>
-                <div class ="novelButton">
-                    <img src="Assets/Covers/default.jpg" class = "novelButtonCover">
-                </div>
-            </th>
-            </tr>
-
-        </tbody>
-        </table>
-    </div>
-    <div id ="allProjects">
-        <h2 class="head-title">All Projects</h2>
-        <table id ="novelButton-table">
-            <tbody id ="tableBody">
-            <tr id ="active-row">
-            </tr>
-
-        </tbody>
-        </table>
+        
+            </div>
 
 
+        <div id="allProjects">
 
-
-
-    </div>
+            <h2 class="head-title">All Projects</h2>
+            <div class ="container">
+                <div class ="novelButton"><img src="Assets/Covers/cover101.webp" class = "novelButtonCover"></div>
+                <div class ="novelButton"><img src="Assets/Covers/cover101.webp" class = "novelButtonCover"></div>
+                <div class ="novel-addButton"></div>
+        </div>
+        
     
 
-</div>
-    <script src="homeScript.js"></script>
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navbar:', error));
+    
+    
+        </div>
+    
 
-    </script>
+    </div>
+    <div id="novelCreation-prompt" class="novelCreation-prompt">
+        <h2 class ="createNew">Create New</h2>
+        <h2 class ="headText">Title</h2>
+        <input class ="txtInput">
+        <h2 class ="headText">Author Name</h2>
+        <input class ="txtInput">
+        <h2 class ="headText">Genre</h2>
+        <input class ="txtInput">
+        <h2 class ="headText">Summray</h2>
+        <input class ="txtInput summ">
+
+    </div>
+
+
+
+
+    </div>
+
+
+
+    
+    <script src="homeScript.js"></script>
+   
 </body>
 </html>
