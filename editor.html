@@ -3,26 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <title></title>
 </head>
 <body>
-    <div class="d-flex flex-column sideBar">
-            <ul class="nav flex-column mb-auto">
-                <li class = "nav-item d-flex ">
-                <a href="index.html"> <i class='bx bxs-home'></i></a>
-                </li>
+    
+        <div class="d-flex flex-column sideBar">
+                <ul class="nav flex-column mb-auto">
+                    <li class = "nav-item d-flex ">
+                    <a href="index.html"> <i class='bx bxs-home'></i></a>
+                    </li>
 
-                <li class="nav-item d-flex">
-                  <a href="projects.html">  <i class='bx bxs-folder-open' ></i></a>
-                </li>
+                    <li class="nav-item d-flex">
+                    <a href="projects.html">  <i class='bx bxs-folder-open' ></i></a>
+                    </li>
 
-                <li class="nav-item d-flex">
-                    <i class='bx bxs-pencil' ></i>
-                </li>
-            </ul>
+                    <li class="nav-item d-flex">
+                        <a href="editor.html"><i class='bx bxs-pencil' ></i></a>
+                    </li>
+                </ul>
 
+        </div>
+       
+            <div class="content-wrapper" id="app">
+                <main>
+                <div class="container d-flex flex-column py-5 ">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="container layout d-flex flex-column" >
+                            <div class="row item" style="margin-top: 2rem;">
+                                <h4 class="inter-bold">Layout</h4>
+                            </div>
+                            <div class="row item">
+                                <p class="inter-regular">Layout</p>
+                            </div>
+                            </div>
+                        
+                        </div>
+                        <div class="col">
+                           <div id="editor" contenteditable="true"></div>
+                           
+                                
+                            
+                            
+                        </div>
 
+                        <div class="col-1">
+                            <div class="container editBar d-flex flex-column" >
+                                <div class="row item" style="margin-top: 2rem;">
+                                
+                                </div>
+                                <div class="row item">
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
+            
+
+                </main>
             </div>
+        
+    
+
+    <script src="editor.js"></script>
 </body>
+
 </html>

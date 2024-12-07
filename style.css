@@ -113,16 +113,16 @@ html,body{
 
 
 .footer {
-    background-color: #D9D9D9;
+    background-color: #f2f0f0;
     margin-top: auto; 
     padding: 10px 0; 
     width:100% ;
     text-align: center; 
 }
 main {
-    flex-grow: 1; /* Take up remaining space */
-    width: 100%; /* Full width */
-    background-color: #f8f9fa; /* Optional: light background for visibility */
+    flex-grow: 1;   
+    width: 100%; 
+    background-color: #f8f9fa; 
 }
 .text-start{
     margin-left: 2rem;
@@ -131,3 +131,41 @@ main {
 .project.cont{
     border-radius: 10px;
 }
+/*editor*/
+
+#editor{
+ 
+    flex: 1;
+    background: #ffffff;
+    border: none !important;
+    z-index: 1 !important;
+    min-height: 1545px; /*STANDARD*/
+    max-width: 1000px; /*STANDARD*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    outline: 0px solid transparent;
+    padding-left: 136px; /*STANDARD*/
+    padding-top: 91px; /*STANDARD*/
+    padding-right : 136px;  /*STANDARD*/
+    padding-bottom: 91px; /*STANDARD*/
+    font-family: 'Times New Roman', Times, serif; /*STANDARD*/
+}
+.layout{
+    background-color:#D9D9D9;
+    width: 230px;
+    height :90vh;
+    border-radius: 20px;
+    position: fixed;
+}
+
+.layout .item{
+    margin-left: .5rem;
+}
+.editBar{
+    background-color:#D9D9D9;
+    width: 50px;
+    height :90vh;
+    border-radius: 20px;
+    position: fixed;
+
+}
+
