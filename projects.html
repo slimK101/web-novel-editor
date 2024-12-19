@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <title>editor</title>
+</head>
+<body>
+    <div class="d-flex flex-column sideBar">
+        <ul class="nav flex-column mb-auto">
+            <li class = "nav-item d-flex ">
+            <a href="index.html"> <i class='bx bxs-home'></i></a>
+            </li>
+
+            <li class="nav-item d-flex">
+              <a href="projects.html">  <i class='bx bxs-folder-open' ></i></a>
+            </li>
+
+            <li class="nav-item d-flex">
+                <a href="editor.html"><i class='bx bxs-pencil' ></i></a>
+            </li>
+            <li class="nav-item d-flex">
+                <a href="sign.html"><i class='bx bxs-user-pin'></i></i></a>
+            </li>
+        </ul>
+
+
+
+    </div>
+
+    <div class="content-wrapper">
+        
+        <main>
+            <div id="creationPrompt">
+                <div class="container d-flex  " style="margin-top: 1rem;" >
+                    <div class="container d-flex">
+                        <div class="row">
+                            <div class="col-9">
+                                <div class="container d-flex">
+                                    <div class="row" style=" row-gap : 10px;">
+                                        <div class="col">
+                                            <p class="inter-bold">Create New</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <input class="form-control" placeholder="Title" id="titleForm"></input> 
+                                            </div>
+                                            
+                                           
+                                        </div>
+                
+                                        <div class="row">
+                                            <div class="col">
+                                                <input class="form-control" placeholder="Author" id="authorForm"></input> 
+                                            </div>
+                                            
+                                           
+                                        </div>  
+                                        <div class="row">
+                                            <div class="col">
+                                                <input class="form-control" placeholder="Genre" id="genreForm"></input> 
+                                            </div>
+                                            
+                                           
+                                        </div>  
+                
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="btn btn-light inter-regular default-text" style="width :10rem ; background-color: #D9D9D9; margin-top: .5rem;" onclick="closePrompt()">Cancel</button>
+                                            </div>
+                                            <div class="col">
+                                                <button class="btn btn-light inter-regular default-text" style="width :10rem ; background-color: #D9D9D9; margin-top: .5rem;" onclick="confirmCreation()">Create</button>
+                                            </div>
+                                            
+                                           
+                                        </div>  
+                                           
+                                       </div>
+
+
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <p class="inter-bold">Add Cover</p>
+                                <i class='bx bx-image-add' style="position: absolute; padding-left: 50px; padding-top: 75px; width: 100px;" ></i>
+                                <img src="Assets/projects/novelAddCover.jpg" draggable="false" style="height: 170px; width: auto; border-radius: 20px;" onclick="uploadImage()">
+                               
+                            </div>
+                        </div>
+                    </div>
+                       
+                       
+               
+               
+               
+                   </div>
+                </div>
+            <div class="container" style="margin-top: 2rem;">
+                <h2 class="inter-bold " style="margin-left: 1.5rem;">Recent Projects</h2>
+                <div class="container d-flex flex-column" style="margin-top: 1.5rem;">
+                    <div class="row" id="novelBtnContainer">
+                        
+                        
+                        <div class="col-2 addBtn" id="addBtn" onclick="promptnewCreation() " >
+                            <div class="container projectCont" >
+                                    
+                                    <p class="inter-bold default-text" style="position: absolute; margin-top: .5rem; margin-left: .5rem;">Create New</p>
+                                    <img src="Assets/projects/novelAddCover.jpg" class = "cover" draggable="false" >
+                                   
+                                
+                             </div>   
+                                
+                                
+
+                        </div>
+
+                            
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <script src="projects.js"></script>
+    
+    <script>
+        function uploadImage() {
+            console.log("works");
+        const fileInput = document.getElementById('fileInput');
+        const titleInput = document.getElementById('titleForm');
+        
+        const file = fileInput.files[0];
+        const customName = titleInput.value;
+
+        if (!file) {
+            alert('Please select an image');
+            return;
+        }
+
+        if (!customName) {
+            alert('Please enter a title');
+            return;
+        }
+
+      
+        const fileExtension = file.name.split('.').pop();
+
+       
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(file);
+        link.download = `${customName}.${fileExtension}`;
+        
+     
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+     
+        URL.revokeObjectURL(link.href);
+    }
+    
+    </script>
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="d-flex flex-column sideBar">
+        <ul class="nav flex-column mb-auto">
+            <li class = "nav-item d-flex ">
+            <a href="index.html"> <i class='bx bxs-home'></i></a>
+            </li>
+
+            <li class="nav-item d-flex">
+              <a href="projects.html">  <i class='bx bxs-folder-open' ></i></a>
+            </li>
+
+            <li class="nav-item d-flex">
+                <a href="editor.html"><i class='bx bxs-pencil' ></i></a>
+            </li>
+            <li class="nav-item d-flex">
+                <a href="sign.html"><i class='bx bxs-user-pin'></i></i></a>
+            </li>
+        </ul>
+
+
+
+        </div>
+
+
+        <div class="container d-flex justify-content-center align-items-center vh-100">
+            <div class="card shadow-sm" style="width: 400px;">
+                <div class="card-body">
+                    <h2 class="text-center mb-4 inter-bold">Connexion à la plateforme</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="username" class="form-label inter-bold">Nom d'utilisateur :</label>
+                            <input type="text" id="username" name="username" class="form-control" required>
+                            <div id="usernameError" class="text-danger" hidden></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label inter-bold">Mot de passe :</label>
+                            <input type="password" id="password" name="password" class="form-control inter-bold" required>
+                            <div id="passwdError" class="text-danger" hidden></div>
+                        </div>
+                        <div id="SaisieError" class="text-danger mb-3" hidden></div>
+                        <button type="submit" id="validButton" class="btn btn-primary w-100 inter-regular" style="background-color: rgba(153, 158, 162, 0.776);">Valider</button>
+                    </form>
+                    <p class="text-center mt-3"><a href="inscri.html" id="inscription">S'inscrire</a></p>
+                </div>
+            </div>
+            <script src="signIn.js"></script>
+</body>
+</html>
